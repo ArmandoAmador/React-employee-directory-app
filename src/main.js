@@ -1,15 +1,9 @@
 "use strict";
 
 var React = require('react');
+var Router = require('react-router');
+var routes = require('./routes');
 
-var Hello = React.createClass({
-  render: function() {
-    return (
-      <div>
-        <h1 className="hello">Hello World</h1>
-      </div>
-    );
-  }
+Router.run(routes, function(Handler) {
+  React.render(<Handler/>, document.getElementById('app'));
 });
-
-React.render(<Hello />, document.getElementById('app'));
