@@ -1,6 +1,8 @@
 "use strict";
 
 var React = require('react');
+var Router = require('react-router');
+var Link = Router.Link;
 
 var EmployeeList = React.createClass({
   propTypes: {
@@ -12,7 +14,7 @@ var EmployeeList = React.createClass({
       return (
         <tr key={employee.id}>
           <td><img className="avatar-home" src={employee.avatar} /></td>
-          <td>{employee.first_name} {employee.last_name}</td>
+          <td><Link to="profile" params={{id: employee.id}}>{employee.first_name} {employee.last_name}</Link></td>
           <td>{employee.title}</td>
           <td>{employee.location}</td>
         </tr>

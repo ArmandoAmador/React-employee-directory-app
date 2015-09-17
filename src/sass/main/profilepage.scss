@@ -1,0 +1,92 @@
+.profile {
+  .avatar-column {
+    width: 100%;
+    float: left;
+
+    @media (min-width: 1200px) {
+      width: 220px;
+    }
+  }
+
+  .bio-column {
+    width: 100%;
+    float: left;
+    margin-top: 15px;
+    margin-left: 0px;
+
+    @media (min-width: 1200px) {
+      width: 450px;
+    }
+  }
+
+  .contact-column {
+    width: 100%;
+    float: left;
+
+    @media (min-width: 1200px) {
+      width: 200px;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+    }
+  }
+
+  h1, p {
+    margin-bottom: 15px;
+    line-height: 1.4em;
+  }
+
+  h1 {
+    font-size: 36px;
+    font-weight: normal;
+  }
+
+  a {
+    font-size: 16px;
+    font-weight: bold;
+    color: $blue-primary;
+    text-decoration: none;
+  }
+
+  p {
+    font-size: 16px;
+    font-weight: normal;
+    color: $grey-75;
+  }
+
+  .bio {
+    font-family: "georgia";
+    font-style: italic;
+    color: $grey-50;
+    font-size: 14px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: -o-ellipsis-lastline;
+    word-wrap: break-word;
+  }
+
+  .edit-profile-button {
+    margin-left: 5px;
+  }
+
+  hr {
+    margin-bottom: 10px;
+    margin-top: 10px;
+    border: 1px solid $grey-15;
+  }
+
+  .mobile-title {
+    font-size: 10px;
+    color: $grey-50;
+    text-transform: uppercase;
+    margin-bottom: 0px;
+  }
+
+  .mobile-number {
+    color: $blue-primary;
+    font-size: 14px;
+    font-weight: bold;
+  }
+}
