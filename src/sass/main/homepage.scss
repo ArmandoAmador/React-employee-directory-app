@@ -1,53 +1,40 @@
 h1 {
-   // font-size: 36px;
+   font-size: 36px;
    font-weight: normal;
    color: $grey-75;
 }
 
-nav {
-  background: $grey-95;
-  border-bottom: 10px solid $blue-primary;
-  margin-bottom: 40px;
+.homepage-table {
+  tbody tr:last-child > td, tbody tr:last-child {
+    border-bottom: 0;
+  }
+
+  th {
+    padding-bottom: 10px;
+    border-bottom: 3px solid $grey-10;
+    font-size: 16px;
+    font-weight: bold;
+    color: $grey-90;
+  }
+
+  tr {
+    border-bottom: 1px solid $grey-10;
+  }
+
+  td {
+    padding-top:10px;
+    padding-bottom:10px;
+    font-size: 16px;
+    font-weight: normal;
+    color: $grey-75;
+    @media (min-width: 750px) {
+      line-height: none;
+    }
+  }
 
   a {
-    color: white;
-    font-weight: bold;
-    font-size: 24px;
-  }
-}
-
-
-@media (min-width: 750px) {
-  .homepage-table {
-    th {
-      padding-bottom: 10px;
-      border-bottom: 3px solid $grey-10;
-      font-size: 16px;
-      font-weight: bold;
-      color: $grey-90;
-    }
-
-    tr {
-      border-bottom: 1px solid $grey-10;
-    }
-
-    tr:last-child > td {
-      border-bottom: 0;
-    }
-
-    td {
-      line-height: 0px;
-      padding-top:10px;
-      padding-bottom:10px;
-      font-size: 16px;
-      font-weight: normal;
-      color: $grey-75;
-    }
-
-    a {
-      font-size: 16px;
-      color: blue-primary;
-      font-weight: normal;
-    }
+    font-size: 16px;
+    color: blue-primary;
+    font-weight: normal;
   }
 }
