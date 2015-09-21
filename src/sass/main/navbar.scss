@@ -6,8 +6,8 @@ nav {
 
 .navbar {
   display: block;
-  width: 100%;
   height: 60px;
+  width: 100%;
 }
 
 .navbar-list {
@@ -21,11 +21,11 @@ nav {
 }
 
 .navbar-link {
-  text-transform: uppercase;
+  color: $white;
   font-size: 24px;
   font-weight: bold;
+  line-height: 60px;
   margin-right: 35px;
   text-decoration: none;
-  line-height: 60px;
-  color: white;
+  text-transform: uppercase;
 }

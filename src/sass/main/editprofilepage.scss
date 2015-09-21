@@ -1,0 +1,51 @@
+.editprofile {
+
+  .form-section {
+    width: 100%;
+
+    .left-section {
+      box-sizing: border-box;
+      @media (min-width: 1050px) {
+        float: left;
+        width: 220px;
+      }
+    }
+
+    .right-section {
+      box-sizing: border-box;
+      @media (min-width: 1050px) {
+        border-bottom: 1px solid $grey-75;
+        float: left;
+        margin-top: 15px;
+        width: 75%;
+      }
+    }
+
+    .avatar-section {
+      width: 100%;
+    }
+
+    .bio-section {
+      width: 100%;
+
+      @media (min-width: 1050px) {
+        float: left;
+        width: 400px;
+      }
+    }
+
+    .contact-section {
+      width: 100%;
+
+      @media (min-width: 1050px) {
+        float: right;
+        width: 210px;
+      }
+    }
+  }
+
+  .button-section {
+    float: right;
+    margin-top: 10px;
+  }
+}

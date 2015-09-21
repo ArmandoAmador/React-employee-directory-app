@@ -1,6 +1,9 @@
 "use strict";
 
 var React = require('react');
+var Router = require('react-router');
+var Link = Router.Link;
+var formatDate = require('../common/formatDate');
 
 
 var EmployeeProfile = React.createClass({
@@ -9,15 +12,20 @@ var EmployeeProfile = React.createClass({
   },
 
   render: function() {
+    var startDate = formatDate(this.props.employee.start_date);
     return (
       <div className="profile">
         <div className="avatar-column">
           <img className="avatar-profile" src={this.props.employee.avatar} />
         </div>
         <div className="bio-column">
-          <h1>{this.props.employee.first_name} {this.props.employee.last_name}<span className="edit-profile-button"><a href="#">Edit Profile</a></span></h1>
+          <h1>{this.props.employee.first_name} {this.props.employee.last_name}
+            <span className="edit-profile-button">
+              <Link to="editprofile" params={{id: this.props.employee.id}}>Edit Profile</Link>
+            </span>
+          </h1>
           <p>{this.props.employee.title}</p>
-          <p>{"Employed since " + this.props.employee.start_date}</p>
+          <p>{"Employed since " + startDate}</p>
           <p>{this.props.employee.location}</p>
           <p className="bio">{this.props.employee.bio}</p>
         </div>

@@ -1,0 +1,25 @@
+%btn {
+  font-size: 16px;
+  padding: 0;
+}
+
+.cancel-btn {
+  @extend %btn;
+  border: 0;
+  margin-right: 15px;
+}
+
+.save-btn {
+  @extend %btn;
+  background: $blue-primary;
+  border-radius: 3px;
+  color: $white;
+  height: 28px;
+  line-height: 16px;
+  padding: 3px 10px;
+
+  &:hover {
+    background: darken($blue-primary, 5%);
+    color: $white;
+  }
+}
