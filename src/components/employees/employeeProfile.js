@@ -5,32 +5,33 @@ import formatDate from '../common/formatDate';
 
 var EmployeeProfile = React.createClass({
   propTypes: {
-    employee: React.PropTypes.object.isRequired
+    employeeItem: React.PropTypes.object.isRequired
   },
 
   render: function() {
-    var startDate = formatDate(this.props.employee.start_date);
+
+    var startDate = formatDate(this.props.employeeItem.start_date);
     return (
       <div className="profile">
         <div className="avatar-column">
-          <img className="avatar-profile" src={this.props.employee.avatar} />
+          <img className="avatar-profile" src={this.props.employeeItem.avatar} />
         </div>
         <div className="bio-column">
-          <h1>{this.props.employee.first_name} {this.props.employee.last_name}
+          <h1>{this.props.employeeItem.first_name} {this.props.employeeItem.last_name}
             <span className="edit-profile-button">
-              <Link to="editprofile" params={{id: this.props.employee.id}}>Edit Profile</Link>
+              <Link to={`/profile/${this.props.employeeItem.id}/edit`}> Edit Profile</Link>
             </span>
           </h1>
-          <p>{this.props.employee.title}</p>
+          <p>{this.props.employeeItem.title}</p>
           <p>{"Employed since " + startDate}</p>
-          <p>{this.props.employee.location}</p>
-          <p className="bio">{this.props.employee.bio}</p>
+          <p>{this.props.employeeItem.location}</p>
+          <p className="bio">{this.props.employeeItem.bio}</p>
         </div>
         <div className="contact-column">
-          <p><a href={"mailto:" + this.props.employee.email}>Email</a></p>
+          <p><a href={"mailto:" + this.props.employeeItem.email}>Email</a></p>
           <hr />
           <p className="mobile-title">Mobile Phone:</p>
-          <p className="mobile-number"><a href={"tel:" + this.props.employee.phone}>{this.props.employee.phone}</a></p>
+          <p className="mobile-number"><a href={"tel:" + this.props.employeeItem.phone}>{this.props.employeeItem.phone}</a></p>
         </div>
       </div>
     );

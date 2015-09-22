@@ -1,6 +1,5 @@
 import React from 'react';
-import Router from 'react-router';
-import { Link } from 'react-router';
+import { Router, Link } from 'react-router';
 
 var EmployeeList = React.createClass({
   propTypes: {
@@ -12,7 +11,7 @@ var EmployeeList = React.createClass({
       return (
         <tr key={employee.id}>
           <td><img className="avatar-home" src={employee.avatar} /></td>
-          <td><Link to="profile" params={{id: employee.id}}>{employee.first_name} {employee.last_name}</Link></td>
+          <td><Link to={`/profile/${employee.id}`}>{employee.first_name} {employee.last_name}</Link></td>
           <td>{employee.title}</td>
           <td>{employee.location}</td>
         </tr>

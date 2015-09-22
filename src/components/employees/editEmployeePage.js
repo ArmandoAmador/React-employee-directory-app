@@ -1,12 +1,12 @@
 import React from 'react';
 import EmployeeApi from './../../api/employeeApi';
 import EmployeeForm from './employeeForm';
-import Router from 'react-router';
+import { History } from 'react-router';
 import validDate from '../common/validDate';
 
 var EditProfilePage = React.createClass({
   mixins: [
-    Router.Navigation
+    History
   ],
 
   getInitialState: function() {
@@ -94,18 +94,18 @@ var EditProfilePage = React.createClass({
 
     EmployeeApi.saveEmployee(this.state.employee);
     this.setState({dirty: false});
-    this.transitionTo('profile', {id: this.state.employee.id});
+    this.history.pushState(null, `/profile/${this.state.employee.id}`);
   },
 
   cancel: function(event) {
     event.preventDefault();
 
     if (!this.state.dirty && confirm('leave without editing?')) {
-      return this.transitionTo('profile', {id: this.state.employee.id});
+      return this.history.pushState(null, `/profile/${this.state.employee.id}`);
     }
 
     if (this.state.dirty && confirm('leave without saving?')) {
-      return this.transitionTo('profile', {id: this.state.employee.id});
+      return this.history.pushState(null, `/profile/${this.state.employee.id}`);
     }
   },
 

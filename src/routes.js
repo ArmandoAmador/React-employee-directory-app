@@ -1,20 +1,13 @@
-"use strict";
-
-var React = require('react');
-var Router = require('react-router');
-var DefaultRoute = Router.DefaultRoute;
-var Route = Router.Route;
-var NotFoundRoute = Router.NotFoundRoute;
-var Redirect = Router.Redirect;
+import React from 'react';
+import { IndexRoute, Route} from 'react-router'
 
 var routes = (
-  <Route name="app" path="/" handler={require('./components/app')}>
-    <DefaultRoute handler={require('./components/homePage')} />
-    <Route name="profiles" path="profiles" handler={require('./components/homePage')} />
-    <Route name="profile" path="profile/:id" handler={require('./components/employees/viewEmployeePage')} />
-    <Route name="editprofile" path="profile/:id/edit" handler={require('./components/employees/editEmployeePage')} />
-    <NotFoundRoute handler={require('./components/notFoundPage')} />
+  <Route path="/" component={require('./components/app')}>
+    <IndexRoute component={require('./components/homePage')} />
+    <Route path="/profile/:id" component={require('./components/employees/viewEmployeePage')} />
+    <Route path="/profile/:id/edit" component={require('./components/employees/editEmployeePage')} />
+    <Route path="*" component={require('./components/notFoundPage')} />
   </Route>
 );
 
-module.exports = routes;
+export default routes;
