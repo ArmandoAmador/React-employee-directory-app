@@ -1,12 +1,16 @@
 {
+  "parser": "babel-eslint",
+
   "ecmaFeatures": {
-    "jsx": true
+    "jsx": true,
+    "modules": true
   },
   "env": {
     "browser": true,
     "node": true,
   },
   "rules": {
+    "strict": 0,
     "quotes": 0,
     "no-trailing-spaces": 0,
     "eol-last": 0,
@@ -14,5 +18,8 @@
     "no-underscore-dangle": 0,
     "no-alert": 0,
     "no-lone-blocks": 0
-  }
+  },
+  "plugins": [
+    "react"
+  ]
 }

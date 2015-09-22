@@ -1,8 +1,6 @@
-'use strict';
-
-var React = require('react');
-var EmployeeApi = require('./../api/employeeApi');
-var EmployeeList = require('./employees/employeeList');
+import React from 'react';
+import EmployeeApi from './../api/employeeApi';
+import EmployeeList from './employees/employeeList';
 
 var HomePage = React.createClass({
   getInitialState: function() {
@@ -27,4 +25,4 @@ var HomePage = React.createClass({
   }
 });
 
-module.exports = HomePage;
+export default HomePage;

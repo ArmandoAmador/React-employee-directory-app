@@ -1,10 +1,8 @@
-"use strict";
-
-var React = require('react');
-var EmployeeApi = require('./../../api/employeeApi');
-var EmployeeForm = require('./employeeForm');
-var Router = require('react-router');
-var validDate = require('../common/validDate');
+import React from 'react';
+import EmployeeApi from './../../api/employeeApi';
+import EmployeeForm from './employeeForm';
+import Router from 'react-router';
+import validDate from '../common/validDate';
 
 var EditProfilePage = React.createClass({
   mixins: [
@@ -126,4 +124,4 @@ var EditProfilePage = React.createClass({
   }
 });
 
-module.exports = EditProfilePage;
+export default EditProfilePage;

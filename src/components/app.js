@@ -1,11 +1,9 @@
-"use strict";
+import React from 'react';
+import Header from './common/header';
+import { RouteHandler } from 'react-router';
 
-var React = require('react');
-var Header = require('./common/header');
-var RouteHandler = require('react-router').RouteHandler;
-
-var App = React.createClass({
-  render: function() {
+class App extends React.Component{
+  render() {
     return (
       <div>
         <Header />
@@ -15,6 +13,6 @@ var App = React.createClass({
       </div>
     );
   }
-});
+}
 
-module.exports = App;
+export default App;

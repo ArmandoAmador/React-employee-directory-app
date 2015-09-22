@@ -1,6 +1,4 @@
-"use strict";
-
-var React = require('react');
+import React from 'react';
 
 var Input = React.createClass({
   propTypes: {
@@ -34,4 +32,4 @@ var Input = React.createClass({
   }
 });
 
-module.exports = Input;
+export default Input;

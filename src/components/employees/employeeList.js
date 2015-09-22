@@ -1,8 +1,6 @@
-"use strict";
-
-var React = require('react');
-var Router = require('react-router');
-var Link = Router.Link;
+import React from 'react';
+import Router from 'react-router';
+import { Link } from 'react-router';
 
 var EmployeeList = React.createClass({
   propTypes: {
@@ -40,4 +38,4 @@ var EmployeeList = React.createClass({
   }
 });
 
-module.exports = EmployeeList;
+export default EmployeeList;

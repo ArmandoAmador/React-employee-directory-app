@@ -1,6 +1,4 @@
-"use strict";
-
-var React = require('react');
+import React from 'react';
 
 var TextArea = React.createClass({
   propTypes: {
@@ -34,4 +32,4 @@ var TextArea = React.createClass({
   }
 });
 
-module.exports = TextArea;
+export default TextArea;

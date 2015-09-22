@@ -1,8 +1,6 @@
-"use strict";
-
-var React = require('react');
-var EmployeeApi = require('./../../api/employeeApi');
-var EmployeeProfile = require('./employeeProfile');
+import React from 'react';
+import EmployeeApi from './../../api/employeeApi';
+import EmployeeProfile from './employeeProfile';
 
 var ViewEmployeePage = React.createClass({
   getInitialState: function() {
@@ -28,4 +26,4 @@ var ViewEmployeePage = React.createClass({
   }
 });
 
-module.exports = ViewEmployeePage;
+export default ViewEmployeePage;

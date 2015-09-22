@@ -1,10 +1,7 @@
-"use strict";
-
-var React = require('react');
-var Router = require('react-router');
-var Link = Router.Link;
-var formatDate = require('../common/formatDate');
-
+import React from 'react';
+import Router from 'react-router';
+import { Link } from 'react-router';
+import formatDate from '../common/formatDate';
 
 var EmployeeProfile = React.createClass({
   propTypes: {
@@ -40,4 +37,4 @@ var EmployeeProfile = React.createClass({
   }
 });
 
-module.exports = EmployeeProfile;
+export default EmployeeProfile;

@@ -1,8 +1,6 @@
-"use strict";
-
-var React = require('react');
-var Input = require('../common/input');
-var TextArea = require('../common/textArea');
+import React from 'react';
+import Input from '../common/input';
+import TextArea from '../common/textArea';
 
 var EmployeeForm = React.createClass({
   propTypes: {
@@ -118,4 +116,4 @@ var EmployeeForm = React.createClass({
   }
 });
 
-module.exports = EmployeeForm;
+export default EmployeeForm;
