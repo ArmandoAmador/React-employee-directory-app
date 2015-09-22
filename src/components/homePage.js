@@ -1,49 +1,39 @@
 import React from 'react';
 import EmployeeApi from './../api/employeeApi';
 import EmployeeList from './employees/employeeList';
-var EmployeeListActions = require('./../flux/actions/EmployeeListActions');
-var EmployeeListStore = require('./../flux/stores/EmployeeListStore');
+var EmployeeActions = require('./../flux/actions/EmployeeActions');
+var EmployeeStore = require('./../flux/stores/EmployeeStore');
 var ListenerMixin = require('alt/mixins/ListenerMixin');
 
 var HomePage = React.createClass({
   mixins: [ListenerMixin],
 
   getInitialState: function() {
-    return EmployeeListStore.getState();
+    return EmployeeStore.getState();
   },
 
   componentWillMount: function() {
-    this.listenTo(EmployeeListStore, this._onChange);
+    this.listenTo(EmployeeStore, this.onChange);
   },
 
   componentDidMount: function() {
-    if (!this.state.employeeList.length) {
-      EmployeeListActions.requestEmployeeList();
-    }
+    EmployeeStore.listen(this.onChange);
+    EmployeeActions.fetchEmployees();
   },
 
-  _onChange: function() {
-    this.setState(EmployeeListStore.getState());
+  componentWillUnmount: function() {
+    EmployeeStore.unlisten(this.onChange);
+  },
+
+  onChange: function() {
+    this.setState(EmployeeStore.getState());
   },
 
   render: function() {
-    var employeeList = null;
-
-    if (this.state.loadingEmployeeList) {
-      employeeList = (
-        <div>Loading</div>
-      );
-    } else {
-      employeeList = (
-        <div>
-          <h1>People</h1>
-          <EmployeeList employees={this.state.employeeList} />
-        </div>
-      );
-    }
     return (
       <div>
-        {employeeList}
+        <h1>People</h1>
+        <EmployeeList employees={this.state.employees} />
       </div>
     );
   }

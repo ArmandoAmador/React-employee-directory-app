@@ -1,18 +1,18 @@
 var alt = require('../alt');
 var employeeApi = require('../../api/employeeApi');
 
-class EmployeeListActions {
-  receiveEmployeeList(list) {
+class EmployeeActions {
+  updateEmployees(list) {
     this.dispatch(list);
   }
 
-  requestEmployeeList() {
+  fetchEmployees() {
     var actionDispatcher = this;
     actionDispatcher.dispatch();
 
     var list = employeeApi.getAllEmployees();
-    actionDispatcher.actions.receiveEmployeeList(list);
+    actionDispatcher.actions.updateEmployees(list);
   }
 }
 
-module.exports = alt.createActions(EmployeeListActions);
+module.exports = alt.createActions(EmployeeActions);
