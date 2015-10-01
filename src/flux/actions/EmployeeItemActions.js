@@ -1,5 +1,5 @@
-var alt = require('../alt');
-var EmployeeApi = require('../../api/employeeApi');
+import alt from '../alt';
+import EmployeeApi from '../../api/employeeApi';
 
 class EmployeeItemActions {
 
@@ -20,4 +20,4 @@ class EmployeeItemActions {
   }
 }
 
-module.exports = alt.createActions(EmployeeItemActions);
+export default alt.createActions(EmployeeItemActions);

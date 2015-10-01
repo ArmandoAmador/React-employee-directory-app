@@ -1,16 +1,9 @@
 import React from 'react';
 
-var TextArea = React.createClass({
-  propTypes: {
-    name: React.PropTypes.string.isRequired,
-    label: React.PropTypes.string.isRequired,
-    onChange: React.PropTypes.func.isRequired,
-    value: React.PropTypes.string,
-    error: React.PropTypes.string
-  },
-
-  render: function () {
+class TextArea extends React.Component{
+  render() {
     var wrapperClass = 'form-group';
+
     if (this.props.error && this.props.error.length > 0) {
       wrapperClass += " " + 'has-error';
     }
@@ -30,6 +23,14 @@ var TextArea = React.createClass({
       </div>
     );
   }
-});
+};
+
+TextArea.propTypes = {
+  name: React.PropTypes.string.isRequired,
+  label: React.PropTypes.string.isRequired,
+  onChange: React.PropTypes.func.isRequired,
+  value: React.PropTypes.string,
+  error: React.PropTypes.string
+}
 
 export default TextArea;
