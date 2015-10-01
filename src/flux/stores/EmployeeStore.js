@@ -1,4 +1,5 @@
-var alt = require('../alt');
+import alt from '../alt';
+
 var EmployeeActions = require('../actions/EmployeeActions');
 
 class EmployeeStore {
@@ -19,4 +20,4 @@ class EmployeeStore {
   }
 }
 
-module.exports = alt.createStore(EmployeeStore, 'EmployeeStore');
+export default alt.createStore(EmployeeStore, 'EmployeeStore');

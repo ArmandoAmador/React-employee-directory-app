@@ -1,5 +1,5 @@
-var alt = require('../alt');
-var employeeApi = require('../../api/employeeApi');
+import alt from '../alt';
+import EmployeeApi from '../../api/employeeApi'
 
 class EmployeeActions {
   updateEmployees(list) {
@@ -10,9 +10,9 @@ class EmployeeActions {
     var actionDispatcher = this;
     actionDispatcher.dispatch();
 
-    var list = employeeApi.getAllEmployees();
+    var list = EmployeeApi.getAllEmployees();
     actionDispatcher.actions.updateEmployees(list);
   }
 }
 
-module.exports = alt.createActions(EmployeeActions);
+export default alt.createActions(EmployeeActions);

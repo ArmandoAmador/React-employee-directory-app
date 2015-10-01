@@ -1,15 +1,7 @@
 import React from 'react';
 
-var Input = React.createClass({
-  propTypes: {
-    name: React.PropTypes.string.isRequired,
-    label: React.PropTypes.string.isRequired,
-    onChange: React.PropTypes.func.isRequired,
-    value: React.PropTypes.string,
-    error: React.PropTypes.string
-  },
-
-  render: function () {
+class Input extends React.Component{
+  render() {
     var wrapperClass = 'form-group';
     if (this.props.error && this.props.error.length > 0) {
       wrapperClass += " " + 'has-error';
@@ -30,6 +22,14 @@ var Input = React.createClass({
       </div>
     );
   }
-});
+}
+
+Input.propTypes = {
+  name: React.PropTypes.string.isRequired,
+  label: React.PropTypes.string.isRequired,
+  onChange: React.PropTypes.func.isRequired,
+  value: React.PropTypes.string,
+  error: React.PropTypes.string
+}
 
 export default Input;

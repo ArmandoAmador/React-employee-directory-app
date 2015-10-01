@@ -1,9 +1,9 @@
 import React from 'react';
 import EmployeeApi from './../api/employeeApi';
 import EmployeeList from './employees/employeeList';
-var EmployeeActions = require('./../flux/actions/EmployeeActions');
-var EmployeeStore = require('./../flux/stores/EmployeeStore');
-var ListenerMixin = require('alt/mixins/ListenerMixin');
+import EmployeeActions from './../flux/actions/EmployeeActions';
+import EmployeeStore from './../flux/stores/EmployeeStore';
+import ListenerMixin from 'alt/mixins/ListenerMixin';
 
 var HomePage = React.createClass({
   mixins: [ListenerMixin],
