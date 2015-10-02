@@ -11,7 +11,18 @@ var EditProfilePage = React.createClass({
 
   getInitialState: function() {
     return {
-      employee: {},
+      employee: {
+        "id": "",
+        "first_name": "",
+        "last_name": "",
+        "title": "",
+        "email": "",
+        "location": "",
+        "phone": "",
+        "start_date": "",
+        "bio": "",
+        "avatar": ""
+      },
       errors: {},
       dirty: false
     };
@@ -88,6 +99,7 @@ var EditProfilePage = React.createClass({
 
   saveEmployee: function(event) {
     event.preventDefault();
+
     if (!this.employeeFormIsValid()) {
       return;
     }
