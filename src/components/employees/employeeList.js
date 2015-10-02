@@ -1,9 +1,16 @@
 import React from 'react';
 import { Router, Link } from 'react-router';
+import EmployeeApi from './../../api/employeeApi';
 
 var EmployeeList = React.createClass({
   propTypes: {
     employees: React.PropTypes.array.isRequired
+  },
+
+  deleteEmployee: function(e) {
+    e.preventDefault();
+    EmployeeApi.deleteEmployee(e.target.dataset.id);
+    e.target.parentNode.parentNode.remove();
   },
 
   render: function() {
@@ -14,6 +21,9 @@ var EmployeeList = React.createClass({
           <td><Link to={`/profile/${employee.id}`}>{employee.first_name} {employee.last_name}</Link></td>
           <td>{employee.title}</td>
           <td>{employee.location}</td>
+          <td>
+            <button data-id={employee.id} onClick={this.deleteEmployee}>&times;</button>
+          </td>
         </tr>
       );
     };
@@ -26,6 +36,7 @@ var EmployeeList = React.createClass({
               <th>Name</th>
               <th>Title</th>
               <th>Office</th>
+              <th>Actions</th>
             </tr>
           </thead>
           <tbody>
