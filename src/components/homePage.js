@@ -4,6 +4,7 @@ import EmployeeList from './employees/employeeList';
 import EmployeeActions from './../flux/actions/EmployeeActions';
 import EmployeeStore from './../flux/stores/EmployeeStore';
 import ListenerMixin from 'alt/mixins/ListenerMixin';
+import { Router, Link } from 'react-router';
 
 var HomePage = React.createClass({
   mixins: [ListenerMixin],
@@ -34,6 +35,7 @@ var HomePage = React.createClass({
       <div>
         <h1>People</h1>
         <EmployeeList employees={this.state.employees} />
+        <Link to="/profile" className="button">Add Employee</Link>
       </div>
     );
   }
