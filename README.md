@@ -32,17 +32,8 @@
  - **react** - A JavaScript library for building user interfaces
  - **react-router** - A complete routing solution for React.js
 
-
-####Comments/Problems encountered
-
-  - Even though there were some information provided such as font-size, margin, color, etc, there were no indication of how wide the site should be, or if it should be mobile. I went ahead and created basic responsive site using a lightweight css framework called ‘skeleton’
-
-  - In profile edit view pdf specs, there is a field for fullname, this field data should be split into first name and last name, I was able to split it at first, but when adding validation I was not able to validate for just first name. I decided to split full name field into first name and last name because not everyone has both and it would be easier to input and add validation
-
-  - When implementing alt flux, I’m able to edit a profile and update the profile view with new information. The problem I’m currently having is updating the profile directory page with new info.
-
-
 ####Todo
 
- -  Fix how state is being updated for the employee directory page after editing a profile
+ - Fix how state is being updated for the employee directory page after editing a profile
  - Update all components to use ES6 syntax
+ - Fix flux(alt) implementation
